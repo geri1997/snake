@@ -8,14 +8,14 @@ const snake = document.createElement("div");
 snake.classList.add("snake");
 let automaticSnakeMoveId;
 let snakePosition = [
-  Math.ceil(Math.random() * (boardWidth - snakeLength)),
-  Math.ceil(Math.random() * (boardWidth - snakeLength)),
+    Math.ceil(Math.random() *19)* 30,
+    Math.ceil(Math.random() *19)* 30
 ];
 
 function renderFruit() {
   let fruitPosition = [
-    Math.ceil(Math.random() * (boardWidth - fruitDiameter)),
-    Math.ceil(Math.random() * (boardWidth - fruitDiameter)),
+    Math.ceil(Math.random() *19)* 30,
+    Math.ceil(Math.random() *19)* 30
   ];
   fruit.style.left = fruitPosition[0] + "px";
   fruit.style.top = fruitPosition[1] + "px";
@@ -57,12 +57,7 @@ function renderSnake() {
     snakePosition[1] + "px",
   ];
   board.append(snake);
-  console.log(
-    bottomLeftCorner,
-    topLeftCorner,
-    bottomRightCorner,
-    topRightCorner
-  );
+  
 }
 renderSnake();
 
@@ -97,6 +92,6 @@ function moveAutomatically(e) {
       document.removeEventListener("keydown", startGameMove)
       break;
   }
-  console.log(e);
+ 
   renderSnake();
 }
